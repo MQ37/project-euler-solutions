@@ -1,9 +1,7 @@
 let reverse s =
   String.of_seq
     (List.to_seq
-       (List.fold_left
-          (fun acc x -> [ x ] @ acc)
-          []
+       (List.rev
           (List.of_seq (String.to_seq s))))
 
 let is_palindrome n =
